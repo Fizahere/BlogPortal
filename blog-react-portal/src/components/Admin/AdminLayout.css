@@ -1,0 +1,15 @@
+body {
+    padding-top: 0 !important;
+}
+
+.custom-heading-one {
+    color: white;
+    font-size: 2rem;
+    padding-left: 3rem;
+}
+
+nav {
+    background-color: white !important;
+    box-shadow: none !important;
+    padding: 1rem!important;
+}
