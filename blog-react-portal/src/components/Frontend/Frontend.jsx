@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from "react";
 import "../../assets/css/bootstrap.min.css";
-import "../../App.css";
+import './frontend.css'
 import "../../assets/css/blog-home.css";
 import { Outlet, Link, useNavigate } from "react-router-dom";
 import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
