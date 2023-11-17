@@ -9,9 +9,10 @@ export const UnAuthenticatedRoutesNames={
 export const AuthenticatedRoutesNames={
 Home:'/',
 Categories:'/categories',
-AddCategories:'/addCategories',
+AddCategories:'/category/add',
+EditCategories:'/category/edit/:id',
 Posts:'/posts',
-AddPosts:'/addPosts',
+AddPosts:'/post/add',
 }
 
 export const AuthUtilsConstant={

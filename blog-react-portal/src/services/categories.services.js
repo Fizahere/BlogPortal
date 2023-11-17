@@ -19,8 +19,16 @@ const deleteCategoryById = (categoryId) => {
     return response
 }
 
-const addCategory=(payload)=>{
-    const response=ApiService.post(CategoriesServiceUrls.getCategoryUrl,payload)
+const addCategory = (payload) => {
+    const response = ApiService.post(
+        CategoriesServiceUrls.getCategoryUrl,
+        payload
+    );
+    return response;
+};
+
+const editCategory = (payload,categoryId) => {
+    const response = ApiService.put(`${CategoriesServiceUrls.getCategoryUrl}/${categoryId}`, payload)
     return response
 }
 
@@ -29,4 +37,5 @@ export const CategoriesServices = {
     getCategoriesById,
     deleteCategoryById,
     addCategory,
+    editCategory,
 }

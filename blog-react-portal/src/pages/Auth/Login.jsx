@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Form, Input, Typography, notification } from "antd";
-import { UserServices } from '../services/users.services'
+import { UserServices } from '../../services/users.services'
 import { useMutation } from "react-query";
-import { AuthUtils } from "../utilities/Auth.util";
-import { UnAuthenticatedRoutesNames } from "../utilities/util.constant";
+import { AuthUtils } from "../../utilities/Auth.util";
+import { UnAuthenticatedRoutesNames } from "../../utilities/util.constant";
 
 const { Title } = Typography;
 
@@ -11,7 +11,6 @@ function Login() {
   const { mutateAsync: loginRequest, isLoading: loginRequestLoader } =
     useMutation(UserServices.login);
 
-  // { email: "", password: "" };
   const onFinish = async (values) => {
     await loginRequest(values, {
       onSuccess: (data) => {

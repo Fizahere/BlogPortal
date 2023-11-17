@@ -5,6 +5,7 @@ import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { CategoriesServices } from '../../../services/categories.services'
 import { useNavigate } from 'react-router-dom';
 import { AuthenticatedRoutesNames, UnAuthenticatedRoutesNames } from '../../../utilities/util.constant';
+import PortalMainPage from "../../../components/PortalMainPage/PortalMainPage";
 const { confirm } = Modal
 
 function AdminCategories() {
@@ -45,13 +46,14 @@ function AdminCategories() {
       render: (singleData) => {
         return singleData.cat_id
       },
+      // responsive: ["xs"]
     },
     {
       title: 'Category',
       key: 'category',
       render: (singleData) => {
         return singleData.cat_title
-      }
+      },
     },
     {
       title: 'Created At',
@@ -70,8 +72,8 @@ function AdminCategories() {
     {
       title: 'Edit',
       key: 'edit',
-      render: () => {
-        return <Button type='primary' >Edit</Button>
+      render: (singleData) => {
+        return <Button type='primary' onClick={() => navigate(AuthenticatedRoutesNames.EditCategories.replace(':id', singleData.cat_id))} >Edit</Button>
       }
     },
     {
@@ -85,15 +87,14 @@ function AdminCategories() {
   return (
     <div>
       {contextHolder}
-      <Row type='flex'
-        justify='space-between'
-        align='middle'
-        style={{ marginBottom: '2rem' }}>
-        <Col style={{ marginBottom: '0px', marginTop: '0px' }}><h3>Categories</h3></Col>
-        <Col><Button type='primary' onClick={() => navigate(AuthenticatedRoutesNames.AddCategories)}>+ Add Category</Button></Col>
-      </Row>
-      <Table loading={categoryLoading || deleteCategoryLoading} columns={columns}
-        dataSource={categoriesDataMemo} />
+    <PortalMainPage 
+    columns={columns}
+    heading={"Categories"}
+    addBtn={AuthenticatedRoutesNames.AddCategories}
+    data={categoriesDataMemo}
+    contentLoading={categoryLoading}
+    deleteLoading={deleteCategoryLoading}
+    />
     </div>
   )
 }

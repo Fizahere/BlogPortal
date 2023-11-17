@@ -1,9 +1,9 @@
 import React, { useMemo } from 'react'
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
-import { CategoriesServices } from '../services/categories.services'
-import SinglePostLoop from '../components/SinglePostLoop/SinglePostLoop'
-import { UtilServices } from '../utilities/util.services'
+import { CategoriesServices } from '../../services/categories.services'
+import SinglePostLoop from '../../components/SinglePostLoop/SinglePostLoop'
+import { UtilServices } from '../../utilities/util.services'
 
 function CategoryDetailPage() {
     const { id: categoryId } = useParams()

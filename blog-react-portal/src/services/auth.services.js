@@ -8,10 +8,8 @@ const getUserToken = () => {
 const isUserisLoggedIn = () => {
     const token = getUserToken()
     if (!token) {
-        // console.log(false)
         return false;
     }
-    // console.log(true)
     return true;
 };
 

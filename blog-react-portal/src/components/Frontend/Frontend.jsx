@@ -32,7 +32,7 @@ function Frontend() {
     }
 
     return (
-        <>
+        <div className="main">
             <nav className="navbar navbar-inverse navbar-fixed-top" role="navigation">
                 <div className="container">
                     <div className="navbar-header">
@@ -146,7 +146,7 @@ function Frontend() {
             </div>
 
 
-        </>
+        </div>
     )
 }
 

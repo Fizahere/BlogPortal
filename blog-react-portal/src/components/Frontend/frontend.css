@@ -1,3 +1,6 @@
-body{
+.main{
     margin-top: 9rem!important;
+}
+.navbar{
+    background-color: black!important;
 }

@@ -7,6 +7,7 @@ import AdminCategories from '../pages/AdminPortal/Categories/AdminCategories'
 import AddCategory from '../pages/AdminPortal/Categories/AddCategory'
 import AdminPosts from '../pages/AdminPortal/Posts/AdminPosts'
 import AddPost from '../pages/AdminPortal/Posts/AddPost'
+import NotFound from '../pages/NotFound/NotFound'
 
 function AuthenticatedRoutes() {
   return (
@@ -17,7 +18,9 @@ function AuthenticatedRoutes() {
         <Route path={AuthenticatedRoutesNames.AddCategories} element={<AddCategory/>}/>
         <Route path={AuthenticatedRoutesNames.Posts} element={<AdminPosts/>}/>
         <Route path={AuthenticatedRoutesNames.AddPosts} element={<AddPost/>}/>
+        <Route path={AuthenticatedRoutesNames.EditCategories} element={<AddCategory/>}/>
       </Route>
+      <Route path="*" element={<NotFound />} />
     </Routes>
   )
 }

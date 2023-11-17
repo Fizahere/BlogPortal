@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
-import { SearchServices } from '../services/search.services'
-import SinglePostLoop from '../components/SinglePostLoop/SinglePostLoop'
+import { SearchServices } from '../../services/search.services'
+import SinglePostLoop from '../../components/SinglePostLoop/SinglePostLoop'
 
 function SearchDetails() {
     const { name } = useParams()

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react'
-import { PostsServices } from '../services/posts.services'
+import { PostsServices } from '../../services/posts.services'
 import { useQuery } from 'react-query'
-import SinglePostLoop from '../components/SinglePostLoop/SinglePostLoop'
+import SinglePostLoop from '../../components/SinglePostLoop/SinglePostLoop'
 
 function Home() {
     const { data: postData,isLoading:isLoadingPosts } = useQuery(

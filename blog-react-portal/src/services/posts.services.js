@@ -20,7 +20,7 @@ const deletePostById=(postId)=>{
 }
 
 const addPost=(payload)=>{
-    const response = ApiService.post(PostsServicesUrl,payload)
+    const response = ApiService.post(PostsServicesUrl.getPostsUrl,payload)
     return response
 }
 

@@ -1,8 +1,8 @@
 import React, { useMemo } from 'react'
 import { useQuery } from 'react-query'
 import { useParams } from 'react-router-dom'
-import { PostsServices } from '../services/posts.services'
-import { UtilServices } from '../utilities/util.services'
+import { PostsServices } from '../../services/posts.services'
+import { UtilServices } from '../../utilities/util.services'
 
 function PostDetailPage() {
     const { id: postId } = useParams()

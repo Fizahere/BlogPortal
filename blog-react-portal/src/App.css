@@ -1,3 +1,7 @@
 .cursor-pointer:hover{
     cursor: pointer;
   }
+ 
+  .notfound-heading{
+padding: 10rem;
+  }
