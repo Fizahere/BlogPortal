@@ -14,19 +14,28 @@ const getPostsById = (postId) => {
     return response
 }
 
-const deletePostById=(postId)=>{
-    const response= ApiService.delete(`${PostsServicesUrl.getPostsUrl}/${postId}`)
+const deletePostById = (postId) => {
+    const response = ApiService.delete(`${PostsServicesUrl.getPostsUrl}/${postId}`)
     return response
 }
 
-const addPost=(payload)=>{
-    const response = ApiService.post(PostsServicesUrl.getPostsUrl,payload)
+const addPost = (payload) => {
+    const response = ApiService.post(PostsServicesUrl.getPostsUrl, payload)
     return response
 }
+
+const updatePostById = (postId, payload) => {
+    const response = ApiService.put(
+      `${PostsServicesUrl.getPostsUrl}/${postId}`,
+      payload
+    );
+    return response;
+  };
 
 export const PostsServices = {
     getAllPosts,
     getPostsById,
     deletePostById,
     addPost,
+    updatePostById,
 }

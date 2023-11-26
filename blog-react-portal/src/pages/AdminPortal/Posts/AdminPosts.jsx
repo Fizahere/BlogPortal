@@ -1,5 +1,5 @@
 import { React, useMemo } from 'react';
-import { Row, Col, Button, Modal, Table, message, Image } from 'antd';
+import { Button, Modal, Table, message, Image } from 'antd';
 import { useMutation, useQuery } from 'react-query';
 import { PostsServices } from '../../../services/posts.services'
 import { ExclamationCircleOutlined } from "@ant-design/icons";
@@ -95,8 +95,9 @@ function AdminPosts() {
         {
             title: 'Edit',
             key: 'edit',
-            render: () => {
-                return <Button type='primary'>Edit</Button>
+            render: (singleData) => {
+                return <Button type='primary' onClick={
+                    () => navigate(AuthenticatedRoutesNames.EditPosts.replace(':id',singleData.id))}>Edit</Button>
             },
         },
         {
@@ -107,19 +108,19 @@ function AdminPosts() {
             },
         },
     ];
-    
+
     return (
         <div>
-      {contextHolder}
-    <PortalMainPage 
-    columns={columns}
-    heading={"Posts"}
-    addBtn={AuthenticatedRoutesNames.AddPosts}
-    data={getPostData}
-    contentLoading={postLoading}
-    deleteLoading={deletePostLoading}
-    />
-    </div>
+            {contextHolder}
+            <PortalMainPage
+                heading={"Posts"}
+                addBtnText={"Add Post"}
+                addBtn={AuthenticatedRoutesNames.AddPosts}
+                columns={columns}
+                dataSource={getPostData}
+                loading={postLoading||deletePostLoading}
+            />
+        </div>
     )
 }
 export default AdminPosts;

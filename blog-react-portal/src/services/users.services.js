@@ -1,6 +1,7 @@
 import { ApiService } from "../utilities/Api.service";
 
 const userServicesUrl = {
+  getUserUrl:"/users",
   login: "/login",
   register:"/register"
 };
@@ -10,6 +11,11 @@ const login = (data) => {
   return response;
 };
 
+const getUsers = ()=>{
+  const response = ApiService.get(userServicesUrl.getUserUrl)
+  return response
+}
+
 // const addUser=(data)=>{
 //   const response = ApiService.post(userServicesUrl.register,data)
 //   return response
@@ -17,5 +23,6 @@ const login = (data) => {
 
 export const UserServices = {
     login,
+    getUsers,
     // addUser,
 }

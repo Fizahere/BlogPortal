@@ -13,6 +13,7 @@ AddCategories:'/category/add',
 EditCategories:'/category/edit/:id',
 Posts:'/posts',
 AddPosts:'/post/add',
+EditPosts:'/post/edit/:id',
 }
 
 export const AuthUtilsConstant={

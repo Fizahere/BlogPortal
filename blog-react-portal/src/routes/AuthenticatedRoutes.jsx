@@ -19,6 +19,7 @@ function AuthenticatedRoutes() {
         <Route path={AuthenticatedRoutesNames.Posts} element={<AdminPosts/>}/>
         <Route path={AuthenticatedRoutesNames.AddPosts} element={<AddPost/>}/>
         <Route path={AuthenticatedRoutesNames.EditCategories} element={<AddCategory/>}/>
+        <Route path={AuthenticatedRoutesNames.EditPosts} element={<AddPost/>}/>
       </Route>
       <Route path="*" element={<NotFound />} />
     </Routes>

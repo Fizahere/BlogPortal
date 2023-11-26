@@ -88,12 +88,12 @@ function AdminCategories() {
     <div>
       {contextHolder}
     <PortalMainPage 
-    columns={columns}
     heading={"Categories"}
+    addBtnText={"Add Categories"}
     addBtn={AuthenticatedRoutesNames.AddCategories}
-    data={categoriesDataMemo}
-    contentLoading={categoryLoading}
-    deleteLoading={deleteCategoryLoading}
+    columns={columns}
+    dataSource={categoriesDataMemo}
+    loading={categoryLoading||deleteCategoryLoading}
     />
     </div>
   )
