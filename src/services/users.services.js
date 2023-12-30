@@ -1,9 +1,9 @@
 import { ApiService } from "../utilities/Api.service";
 
 const userServicesUrl = {
-  getUserUrl:"/users",
+  users: "/users",
   login: "/login",
-  register:"/register"
+  register: "/register"
 };
 
 const login = (data) => {
@@ -11,10 +11,15 @@ const login = (data) => {
   return response;
 };
 
-const getUsers = ()=>{
-  const response = ApiService.get(userServicesUrl.getUserUrl)
+const getAllUsers = () => {
+  const response = ApiService.get(userServicesUrl.users)
   return response
 }
+
+const deleteUserById = (userId) => {
+  const response = ApiService.delete(`${userServicesUrl.users}/${userId}`);
+  return response;
+};
 
 // const addUser=(data)=>{
 //   const response = ApiService.post(userServicesUrl.register,data)
@@ -22,7 +27,8 @@ const getUsers = ()=>{
 // }
 
 export const UserServices = {
-    login,
-    getUsers,
-    // addUser,
+  login,
+  getAllUsers,
+  deleteUserById,
+  // addUser,
 }

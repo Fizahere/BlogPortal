@@ -31,7 +31,7 @@ return (
         {getSearchDataMemo?.length > 0 ? getSearchDataMemo?.map((singlePost) => {
             return <SinglePostLoop singlePost={singlePost} />
         }) :
-            !isLoadingSearch && <h2>No Post Found!<br/>☹️ ☹️</h2>
+            !isLoadingSearch && <h2>No Post Found!</h2>
         }
     </div>
     

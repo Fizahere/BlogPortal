@@ -17,7 +17,11 @@ function PortalMainPage(props) {
         align='middle'
         style={{ marginBottom: '2rem' }}>
         <Col style={{ marginBottom: '0px', marginTop: '0px' }}><h3>{heading}</h3></Col>
-        <Col><Button type='primary' onClick={() => navigate(addBtn)}>+ {addBtnText}</Button></Col>
+        <Col>
+          {addBtn &&
+            <Button type='primary' onClick={() => navigate(addBtn)}>+ {addBtnText}</Button>
+          }
+        </Col>
       </Row>
       <Table {...otherProps} />
     </div>

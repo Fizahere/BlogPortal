@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react';
-import { Row, Table, Col, Button, message, Modal } from 'antd';
+import { Button, message, Modal } from 'antd';
 import { useMutation, useQuery } from 'react-query';
 import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { CategoriesServices } from '../../../services/categories.services'
 import { useNavigate } from 'react-router-dom';
-import { AuthenticatedRoutesNames, UnAuthenticatedRoutesNames } from '../../../utilities/util.constant';
+import { AuthenticatedRoutesNames } from '../../../utilities/util.constant';
 import PortalMainPage from "../../../components/PortalMainPage/PortalMainPage";
+import {UtilServices} from '../../../utilities/util.services'
+
 const { confirm } = Modal
 
 function AdminCategories() {
@@ -59,14 +61,14 @@ function AdminCategories() {
       title: 'Created At',
       key: 'created-at',
       render: (singleData) => {
-        return singleData.created_at
+        return UtilServices.convertDateToOurFormat(singleData.created_at)
       }
     },
     {
       title: 'Updated At',
       key: 'updated-at',
       render: (singleData) => {
-        return singleData.updated_at
+        return UtilServices.convertDateToOurFormat(singleData.updated_at)
       }
     },
     {

@@ -28,11 +28,8 @@ function App() {
       <QueryClientProvider client={queryClient}>
         <div className="app">
           <BrowserRouter>
-            {authenticated ?
-              (<AuthenticatedRoutes />)
-              :
-              (<UnAuthenticatedRoutes />
-              )}
+            {authenticated && <AuthenticatedRoutes />}
+            <UnAuthenticatedRoutes />
           </BrowserRouter>
         </div>
       </QueryClientProvider>

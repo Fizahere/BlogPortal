@@ -21,7 +21,7 @@ const logoutClickHandler = (event) => {
 export const sidebarItems = [
   {
     icon: <PieChartOutlined />,
-    label: <Link to="/">Dashboard</Link>,
+    label: <Link to={AuthenticatedRoutesNames.Home}>Dashboard</Link>,
     key: "dashboard",
   },
   {
@@ -38,12 +38,12 @@ export const sidebarItems = [
 
   {
     icon: <UserOutlined />,
-    label: <Link to="/">Users</Link>,
+    label: <Link to={AuthenticatedRoutesNames.User}>Users</Link>,
     key: "users",
   },
   {
     icon: <FileOutlined />,
-    label: <Link to="/">Comments</Link>,
+    label: <Link to={AuthenticatedRoutesNames.Comments}>Comments</Link>,
     key: "comments",
   },
   {
