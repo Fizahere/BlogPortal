@@ -1,7 +1,7 @@
 import {create} from 'apisauce'
 
 const apiSauceInstance = create({
-    baseURL: process.env.API_URL,
+    baseURL: process.env.REACT_APP_API_URL,
 })
 
 const get = (url, queryParams = {}, config) => {
