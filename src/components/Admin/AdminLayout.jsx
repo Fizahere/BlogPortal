@@ -58,7 +58,7 @@ const AdminLayout = () => {
             textAlign: "center",
           }}
         >
-          Squadcodersdev ©{new Date().getFullYear()} Created by Muzammil
+          start bootstrap ©{new Date().getFullYear()} Created by Fiza
         </Footer>
       </Layout>
     </Layout>
